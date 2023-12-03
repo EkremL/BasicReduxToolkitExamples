@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  background-color: blueviolet;
+  color: whitesmoke;
+  padding: 20px;
+}
+
+.navDiv {
+  position: relative;
+}
+.itemsIcon {
+  position: absolute;
+  right: 10px;
+}
+
+.itemsDiv {
+  position: relative;
+  background-color: white;
+  color: black;
+  width: 20px;
+  text-align: center;
+  border-radius: 50%;
+  top: 2px;
+}
