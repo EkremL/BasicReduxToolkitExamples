@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.App {
+  margin-bottom: 30px;
+}
 
 .navBar {
   display: flex;
@@ -28,4 +31,57 @@
   text-align: center;
   border-radius: 50%;
   top: 2px;
+}
+
+.card {
+  text-align: center;
+}
+
+.cardClearBtn {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.cardItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 150px;
+}
+.cardInfo {
+  text-align: right;
+}
+
+.btnup {
+  margin-top: 50px;
+  border: none;
+  background-color: white;
+}
+
+.btndown {
+  border: none;
+  background-color: white;
+}
+
+.cardQuantity {
+  margin-right: 3px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.cardDeleteButton {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background-color: red;
+  color: whitesmoke;
+  margin-top: 30px;
+}
+.price {
+  margin-top: 20px;
+}
+.tutar {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

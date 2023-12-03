@@ -1,37 +1,47 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import CourseItem from "./CourseItem";
-
+import { clearcard } from "../control/cardSlice";
+//actiona istenilen componentten ulasmak icin usedispatch da import edilmeli
 function CourseList() {
+  //dispatch işlemi
+  const dispatch = useDispatch();
+
   const { cardItems, quantity, total } = useSelector((store) => store.card);
 
   return (
     <>
       {quantity < 1 ? (
-        <section>
+        <section className="card">
           <header>
             <h2>Sepetim</h2>
             <h4>Sepetiniz boş :/</h4>
           </header>
         </section>
       ) : (
-        <section>
+        <section className="card">
           <header>
             <h2>Sepetim</h2>
           </header>
           <div>
-            {cardItems.map((item, index) => {
-              return <CourseItem key={index} {...item} />;
+            {cardItems.map((item) => {
+              return <CourseItem key={item.id} {...item} />;
             })}
           </div>
           <footer>
             <hr />
-            <div>
+            <div className="tutar">
               <h4>
                 Toplam Tutar <span>{total} TL</span>
               </h4>
             </div>
-            <button>Sepeti Temizle</button>
+            <button
+              //silme aksiyonunu veriyoruz
+              onClick={() => dispatch(clearcard())}
+              className="cardClearBtn"
+            >
+              Sepeti Temizle
+            </button>
           </footer>
         </section>
       )}

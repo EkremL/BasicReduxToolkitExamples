@@ -1,24 +1,33 @@
 import React from "react";
 import { BsChevronUp, BsChevronDown } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { removeItem, increase, decrease } from "../control/cardSlice";
 
 function CourseItem({ id, title, price, img, quantity }) {
+  const dispatch = useDispatch();
+
   return (
-    <div>
+    <div className="cardItem">
       <img src={img} alt="" />
-      <div>
+      <div className="cardInfo">
         <h4>{title}</h4>
-        <h4>{price} TL</h4>
+        <h4 className="price">{price} TL</h4>
         <div>
-          <button>
+          <button className="btnup" onClick={() => dispatch(increase(id))}>
             <BsChevronUp />
           </button>
-          <p>{quantity}</p>
+          <p className="cardQuantity">{quantity}</p>
+          <button className="btndown" onClick={() => dispatch(decrease(id))}>
+            <BsChevronDown />
+          </button>
         </div>
-        <button>
-          <BsChevronDown />
+        <button
+          onClick={() => dispatch(removeItem(id))}
+          className="cardDeleteButton"
+        >
+          Sil
         </button>
       </div>
-      <button>Sil</button>
     </div>
   );
 }
